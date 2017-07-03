@@ -1,0 +1,75 @@
+/* 公共样式 */
+
+/*
+图片服务器： https://h5.niuguwang.com/wechatapp/img/123.png
+          https://live.niuguwang.com/wechatapp/img/123.png
+ */
+
+page {
+  line-height: 1.6;
+  font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+}
+
+.color-red{
+  color: #ff4c51;
+}
+
+.color-gray{
+  color: #a0a0a0;
+}
+
+.color-border{
+  color: #e8e8e8;
+}
+
+
+/* 弹性布局 */
+.flexbox{
+  display: flex;
+}
+.flex-row{
+  flex-direction: row;
+}
+.flex-column{
+  flex-direction: column;
+}
+
+/*  */
+.containter{
+  padding: 36rpx 30rpx;
+}
+
+.scroll-view{
+  height: 667px;
+}
+
+/* 省略号 */
+.ellipsis{
+overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+
+.mutli-ellipsis{
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+}
+.mutli3-ellipsis{
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;
+}
+
+.margin-left20{
+  margin-left: 20rpx;
+}
+.margin-right20{
+  margin-right: 20rpx;
+}
+
+.hidden{
+  display: none!important;
+}

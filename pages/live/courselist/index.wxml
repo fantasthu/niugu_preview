@@ -1,0 +1,55 @@
+<view class="containter course-list">
+  <!-- <view wx:if="{{false}}" class="flex-left item top-item" wx:for="{{watchLive}}" wx:for-item="item" wx:key="*item" data-key="{{item}}" bindtap="goRoom">
+    <view class="unit-0">
+      <image src="{{item.userLogoUrl}}" class="avatar"></image>
+    </view>
+    <view class="main unit flex-left">
+      <view class="content unit">
+        <view class="title ellipsis">{{item.liveTitle}}</view>
+        <view class="mutli-ellipsis sub-title color-gray">
+          <text class="tag">{{item.lable}}:</text> {{item.liveName}}
+        </view>
+      </view>
+      <view class="op unit-0">
+        <view class="btn-enter">进入</view>
+      </view>
+    </view>
+  </view> -->
+  <!-- 底部列表 -->
+  <block wx:for="{{liveList}}" wx:for-item="item">
+    <view class="flex-left bottom-item item"  wx:key="*item" data-key="{{item}}" bindtap="goRoom">
+      <view class="unit-0">
+        <image class="avatar" src="{{item.userLogoUrl}}" class="avatar"></image>
+      </view>
+      <view class="main unit flex-left">
+        <view class="content unit">
+          <view class="title ellipsis">{{item.liveTitle}}</view>
+          <view class="mutli-ellipsis sub-title color-gray">
+            <text class="tag">{{item.lable}}</text>：{{item.liveName}}
+          </view>
+        </view>
+        <view class="op unit-0">
+          <view class="btn-enter">进入</view>
+        </view>
+      </view>
+    </view>
+    <view class="section banner-wrap" wx:if="{{index === 1}}">
+      <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+        <!--  -->
+        <block wx:for="{{recommendRecord}}" wx:for-index="idx" wx:for-item="item" wx:key="*item">
+          <view class="b-item" wx:if="{{idx != 3}}" bindtap="goVideoRoom" data-key="{{item}}">
+            <image class="b-img" src="{{item.imgUrl}}"></image>
+            <view class="wrap flex-center flex-middle">
+              <view class="title mutli-ellipsis">{{item.liveName}}</view>
+            </view>
+          </view>
+          <view class="b-item last" wx:if="{{idx == 2}}" bindtap="goPreviousList">
+            <view class="wrap flex-center flex-middle">
+              <view class="title mutli-ellipsis">更多精彩视频</view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,17 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/live/courselist/index",
+    "pages/information/detail/index",
+    "pages/live/previous-list/index",
+    "pages/live/video-room/index",
+    "pages/live/living-room/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "enablePullDownRefresh": false,
+    "navigationBarBackgroundColor": "#ff4c51",
+    "navigationBarTitleText": "牛股王",
+    "navigationBarTextStyle":"#fff"
+  }
+}

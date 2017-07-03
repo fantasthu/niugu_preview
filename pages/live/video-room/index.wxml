@@ -1,0 +1,49 @@
+<view class="page">
+  <view class="video-wrap">
+    <video class="video" autoplay="autoplay" objectFit="fill" src="{{detailData.replayUrl}}" controls></video>
+  </view>
+  <view class="main">
+    <scroll-view bindscrolltolower="lower" scroll-y="true" class="main-scroll" >
+      <!--  -->
+      <view class="anchor-wrap flex-left">
+        <view class="unit-0">
+          <image class="avatar" src="{{detailData.userLogoUrl}}"></image>
+        </view>
+        <view class="unit info-wrap flex-middle">
+          <view>
+            <view class="title ellipsis">{{detailData.liveTitle}}</view>
+            <view class="desc color-gray">{{detailData.liveName}}</view>
+          </view>
+        </view>
+      </view>
+      <!--  -->
+      <view class="video-list paddingLR">
+        <view class="header flexbox flex-row">
+          <view class="item">
+            <view class="title">精品课程</view>
+          </view>
+        </view>
+        <view class="list">
+          <view class="flex-left item" wx:for="{{list}}" wx:key="{{*item}}" wx:for-item="item" bindtap="goVideoRoom" data-key="{{item}}">
+            <view class="unit-0 preview-wrap">
+              <image class="preview" src="{{item.imgUrl}}"></image>
+              <view class="time-wrap">
+                <view class="flex-center flex-middle">
+                  <view class="icon"></view>
+                  <view class="time">{{item.timeSpan}}</view>
+                </view>
+              </view>
+            </view>
+            <view class="unit info-wrap video-item">
+              <view class="title mutli-ellipsis">{{item.title}}</view>
+              <view class="info color-gray flex-left">
+                <view class="name unit ellipsis">{{item.liveText}}</view>
+                <view class="time unit">{{item.startTime}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

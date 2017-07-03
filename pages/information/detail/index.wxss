@@ -1,0 +1,103 @@
+@import '../../common/base.wxss';
+@import '../../common/flex.wxss';
+.page-title {
+  font-size: 46rpx;
+  font-weight: 600;
+  line-height: 64rpx;
+}
+
+.anchor-wrap {
+  margin-top: 50rpx;
+}
+
+.anchor-wrap .avatar {
+  width: 70rpx;
+  height: 70rpx;
+  border: 1px solid #e8e8e8;
+  border-radius: 50%;
+}
+
+.anchor-wrap .name {
+  font-size: 32rpx;
+}
+
+.anchor-wrap .time {
+  font-size: 20rpx;
+}
+
+
+/*  */
+
+.content-wrap {
+  /* margin-top: 30rpx; */
+  font-size: 30rpx;
+}
+
+/*.content-wrap image:first-child {
+  margin-top: 50rpx;
+}*/
+
+.content-wrap .image {
+  /* margin: 30rpx 0; */
+  min-height: 60rpx;
+}
+
+.content-wrap .img {
+  width: 100%;
+  /*min-height: 120rpx;*/
+}
+
+.content-wrap .notice {
+  font-size: 20rpx;
+  margin-top: 15rpx;
+  text-align: center;
+}
+
+.content-wrap .txt {
+  font-size:36rpx;
+}
+
+.content-wrap .txt-content {
+  font-size: 36rpx;
+}
+
+/*  */
+
+.replay-wrap {
+  margin-top: 33rpx;
+}
+
+.replay-wrap .item {
+  margin-bottom: 50rpx;
+}
+
+.replay-wrap .title {
+  font-size: 27rpx;
+  margin-bottom: 30rpx;
+}
+
+.replay-wrap .avatar {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  border: 1px solid #e8e8e8;
+}
+
+.replay-wrap .name {
+  font-size: 32rpx;
+  margin-top: 18rpx;
+  color: #458cf5;
+}
+
+.replay-wrap .content {
+  font-size: 34rpx;
+}
+
+.replay-wrap .time {
+  font-size: 24rpx;
+}
+
+.replay-wrap .emoji {
+  width: 28rpx;
+  height: 28rpx;
+}

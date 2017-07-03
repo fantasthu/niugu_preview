@@ -1,0 +1,23 @@
+<view class="containter">
+  <view class="list">
+    <view class="flex-left item" wx:for="{{list}}" wx:key="$item" wx:for-item="item" bindtap="goVideoRoom" data-key="{{item}}">
+      <view class="unit-0 preview-wrap">
+        <image mode="scaleToFill" class="preview" src="{{item.imgUrl}}"></image>
+        <view class="time-wrap ">
+          <view class="flex-center flex-middle">
+            <view class="icon"></view>
+            <view class="time">{{item.timeSpan}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="unit info-wrap video-item">
+        <view class="title mutli-ellipsis">{{item.liveName}}</view>
+        <view class="info color-gray flex-left">
+          <view class="name unit ellipsis">{{item.userName}}</view>
+          <view class="time unit">{{item.startTime}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{loadingTip}}" class="loading color-gray">加载中...</view>
+</view>

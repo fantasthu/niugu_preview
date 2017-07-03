@@ -1,0 +1,144 @@
+@import '../../common/base.wxss';
+@import '../../common/flex.wxss';
+
+.course-list {
+  padding-right: 0;
+}
+.course-list .bottom-item:nth-child(2) .main{
+  border: none;
+}
+
+.course-list .item .main {
+  padding: 40rpx 30rpx 40rpx 0rpx;
+  margin-left: 30rpx;
+}
+
+.course-list .item .avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  border: 1px solid #e8e8e8;
+  margin-top: 20rpx;
+}
+
+.course-list .item .main {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.item:last-child .main,
+no-border {
+  border: none;
+}
+
+.course-list .item .title {
+  font-size: 30rpx;
+  font-weight: 600;
+  width: 405rpx;
+  margin-bottom: 4rpx;
+}
+
+.course-list .item .sub-title {
+  font-size: 26rpx;
+  width: 405rpx;
+}
+
+.course-list .item .btn-enter {
+  border: 1px solid #ff4c51;
+  width: 104rpx;
+  height: 54rpx;
+  line-height: 54rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  color: #ff4c51;
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
+
+/*  */
+.banner-wrap {
+  margin: 40rpx 0;
+}
+
+.banner-wrap .b-item {
+  width: 370rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+  display: inline-block;
+  color: #fff;
+  margin-right: 15rpx;
+  position: relative;
+  z-index: 10;
+}
+.banner-wrap .b-img {
+  width: 370rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+
+}
+.b-img {
+  position: relative;
+}
+.banner-wrap .b-item .wrap{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+}
+
+.banner-wrap .b-item:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: ' ';
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 8rpx;
+  z-index: 10;
+}
+
+.banner-wrap .b-item .title {
+  position: relative;
+  width: 80%;
+  text-align: center;  /* top: 50%; */
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-size: 36rpx;
+  line-height: 36rpx;
+  z-index: 110;
+  height: 73rpx;
+}
+
+.scroll-view_H {
+  white-space: nowrap;
+}
+
+.banner-wrap .last:before {
+  display: none;
+}
+
+.banner-wrap .last {
+  height: 158rpx;
+  background: none;
+  border: 1rpx solid #ff4c51;
+  color: #ff4c51;
+}
+
+.banner-wrap .last .title {
+  top:  15rpx;
+}
+
+.banner-wrap .last .title:after {
+  position: absolute;
+  display: inline-block;
+  content: ' ';
+  border-top: 2px solid #ff4c51;
+  border-right: 2px solid #ff4c51;
+  width: 15rpx;
+  height: 15rpx;
+  transform: rotate(45deg);
+  top: 8rpx;
+}

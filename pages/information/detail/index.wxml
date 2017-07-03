@@ -1,0 +1,45 @@
+<view class="containter">
+  <view class="page-title">{{page.title}}</view>
+  <view class="anchor-wrap flex-left">
+    <view class="unit-0">
+      <image class="avatar" src="{{page.content.userLogoUrl}}"></image>
+    </view>
+    <view class="unit margin-left20">
+      <view class="name">{{page.content.userName}}</view>
+      <view class="time color-gray">{{page.content.addTime}}</view>
+    </view>
+  </view>
+  <view class="content-wrap">
+    <block wx:for="{{page.content.contentFormat}}" wx:key="*item">
+      <view wx:if="{{item.__type == 'Complex'}}" class="text">
+        <text class="txt-content">
+          {{item.content}}
+        </text>
+      </view>
+      <div wx:if="{{item.__type == 'Image'}}" class="image">
+        <image mode="scaleToFill" style="width:{{item.width}};height:{{item.height}}" class="img" src="{{item.src}}"></image>
+      </div>
+    </block>
+    <view class="notice color-gray">{{page.content.declaration}}</view>
+  </view>
+  <view class="replay-wrap" wx:if="{{page.replyList.length>1}}">
+    <view class="title">回复</view>
+    <view class="list" wx:for="{{page.replyList}}" wx:key="item.id">
+      <view class="item flex-left">
+        <view class="unit-0">
+          <image class="avatar" src="{{item.userLogoUrl}}"></image>
+        </view>
+        <view class="unit margin-left20">
+          <view class="name">{{item.userName}}</view>
+          <view class="content">
+            <block wx:for="{{item.display}}" wx:for-item="cnt" wx:key="*cnt">
+              <image class="emoji" wx:if="{{cnt.type == 'image'}}" src="{{cnt.content}}"></image>
+              <text wx:else class="reply-txt">{{cnt.content}}</text>
+            </block>
+          </view>
+          <view class="time color-gray">{{item.addTime}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

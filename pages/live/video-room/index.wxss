@@ -1,0 +1,92 @@
+@import '../previous-list/index.wxss';
+
+.page{
+  position: absolute;
+  top:  0;
+  left:  0;
+  right: 0;
+  bottom: 0;
+}
+
+.paddingLR{
+  padding: 0 30rpx;
+}
+
+.video-list .header{
+  font-size: 27rpx;
+  justify-content: space-between;
+  margin:  30rpx 0;
+}
+
+.video-list .header .title{
+  font-size: 28rpx;
+  position: relative;
+  padding-left: 16rpx;
+  height: 26rpx;
+  line-height: 26rpx;
+}
+.video-list .header .title:before{
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top:  2rpx;
+  content: ' ';
+  width: 4rpx;
+  height: 20rpx;
+  background: #ff4c51;
+  border-radius: 2px;
+}
+
+/*  */
+.video-wrap{
+  width: 750rpx;
+  height: 450rpx;
+  position: fixed;
+}
+.video-wrap .video{
+  width:  100%;
+  height: 100%;
+}
+.main {
+  position: absolute;
+  top:  450rpx;
+  left:  0;
+  right: 0;
+  bottom:  0;
+  overflow: hidden;
+}
+.main-scroll{
+  height: 800rpx;
+}
+
+/*  */
+.anchor-wrap {
+  margin-top: 30rpx;
+  border-bottom: 1px solid #e8e8e8;
+  margin-left: 30rpx;
+  padding-bottom: 20rpx;
+}
+.anchor-wrap .avatar{
+  width: 120rpx;
+  height: 120rpx;
+  border:  1px solid #e8e8e8;
+  border-radius: 60rpx;
+}
+.anchro-wrap .info-wrap{
+  margin-left: 15rpx;
+}
+
+.anchor-wrap .title {
+  font-size: 32rpx;
+  max-width: 430rpx;
+}
+.anchor-wrap .desc {
+  font-size: 22rpx;
+  max-width: 430rpx;
+}
+
+.video-item {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}

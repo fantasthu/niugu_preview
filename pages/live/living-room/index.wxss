@@ -1,0 +1,243 @@
+@import '../../common/base.wxss';
+@import '../../common/flex.wxss';
+
+
+.page{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+}
+.anchor-card{
+  height: 180rpx;
+  background: #ff4c51;
+  color:  #fff;
+  padding:  0 30rpx;
+}
+.anchor-card .avatar{
+  width: 120rpx;
+  height: 120rpx;
+  border:  1px sloid #fff;
+  border-radius: 60rpx;
+}
+.anchor-card .name{
+  font-size: 32rpx;
+}
+.anchor-card .desc {
+  font-size:  24rpx;
+}
+/*  */
+.tab-bar-wrap {
+  text-align: center;
+  font-size: 31rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.tab-bar-wrap .active{
+  color:  #ff4c51;
+  position: relative;
+}
+.tab-bar-wrap .active:after{
+  position: absolute;
+  display: inline-block;
+  content: ' ';
+  height: 4rpx;
+  width: 28rpx;
+  border-radius: 4rpx;
+  background: #ff4c51;
+  left: 50%;
+  margin-left: -14rpx;
+  bottom:  10rpx;
+}
+
+.main {
+  position: relative;
+}
+/*  */
+.chat-list{
+  position: absolute;
+  top: 90rpx;
+ left:  0;
+ right: 0;
+ bottom: 0;
+ /* background: red; */
+ padding: 10rpx 30rpx 0rpx 30rpx;
+ font-size: 28rpx;
+ overflow: hidden;
+}
+
+.center{
+  text-align: center;
+}
+
+.chat-list .avatar{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+}
+
+.msg-item {
+  margin-bottom: 20rpx;
+}
+
+.chat-list .info-wrap{
+  margin-left: 26rpx;
+  border: 1px solid #e8e8e8;
+  position: relative;
+  border-radius: 10rpx;
+  padding-bottom: 20rpx;
+}
+
+.chat-list .info-wrap:before{
+  display: inline-block;
+  position: absolute;
+  transform: rotate(-45deg);
+  content:  ' ';
+  border-top:  1px solid #e8e8e8;
+  border-left:  1px solid #e8e8e8;
+  width: 15rpx;
+  height: 15rpx;
+  background: #fff;
+  left: -10rpx;
+  top: 40rpx;
+}
+.info-wrap .name{
+  white-space:nowrap;
+  margin-right: 20rpx;
+}
+.msg-item .rank{
+  display: none;
+  font-size: 24rpx;
+}
+.msg-item .top {
+  font-size:  24rpx;
+  margin: 20rpx 24rpx 0 24rpx;
+}
+.msg-item .top .time{
+  text-align: right;
+}
+
+.msg-item .content{
+  margin: 4rpx 24rpx;
+}
+.msg-item .reference{
+  margin-top: 20rpx;
+  padding: 10rpx 24rpx 0 24rpx;
+  border-top: 1px solid #f8edd8;
+  display: none;
+}
+/* --------主播 */
+.anchor .rank{
+  display: block;
+}
+.anchor .info-wrap{
+  background: #fff7e4;
+  border-color: #f8edd8;
+}
+.anchor .info-wrap:before{
+  background: #fff7e4;
+  border-color: #f8edd8;
+  }
+.anchor .reference{
+  display: block;
+}
+/*  ------ 发送者 */
+
+.sender{
+  flex-direction:row-reverse;
+}
+.sender .info-wrap{
+  margin-left: 0;
+  margin-right: 26rpx;
+  background: #d6f1ff;
+  border-color: #c4e5f9;
+}
+
+.sender .info-wrap:before{
+left: initial;
+right: -10rpx;
+transform: rotate(135deg);
+  background: #d6f1ff;
+  border-color: #c4e5f9;
+}
+
+
+
+
+
+
+/*  */
+.send-wrap{
+  height: 88rpx;
+  border-top:  1px solid #e8e8e8;
+  background: #f6f6f7;
+  line-height: 88rpx;
+  padding: 0 14rpx;
+}
+
+.send-wrap .btn-send{
+  /*width: 100rpx;
+  height: 60rpx;*/
+  margin-top: 14rpx;
+  line-height: 60rpx;
+  color: #fff;
+  font-size: 26rpx;
+  text-align: center;
+  background-color: #9bb7f6;
+  border-radius: 10rpx;
+}
+
+.btn-send.active {
+  background-color: #458cf5;
+}
+
+.send-wrap .input-content {
+  border: 1rpx solid #e8e8e8;
+  background: #fff;
+  font-size: 24rpx;
+  height: 60rpx;
+  line-height: 62rpx;
+  margin-top: 12rpx;
+  border-radius: 30rpx;
+  padding: 0rpx 20rpx;
+  color:#999;
+}
+.margin-top15{
+  margin-top: 15rpx;
+}
+
+.send-wrap .input-wrap{
+  /* margin-left: 30rpx; */
+  margin-right: 14rpx;
+}
+.form button {
+  padding-right: 8rpx;
+  padding-left: 8rpx;
+}
+/*  */
+.chat-scroll{
+ height:100%;
+}
+
+.image-text {
+  display: inline-block;
+}
+.reply-txt{
+  display: inline-block;
+}
+
+.emoji {
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.image {
+  width: 100%;
+}
+.btn-send-c {
+  width: 100rpx;
+  height: 60rpx;
+}

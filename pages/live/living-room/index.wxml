@@ -1,0 +1,123 @@
+<view class="page flex-vertical">
+  <view class="unit-0 anchor-card flex-middle">
+    <view class="flex-left">
+      <view class="unit-0">
+        <image class="avatar" src="{{podCast.userLogoUrl}}"></image>
+      </view>
+      <view class="unit flex-middle margin-left20">
+        <view class="">
+          <view class="name">{{podCast.userName}}</view>
+          <view class="desc mutli-ellipsis">{{podCast.slogan}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="unit main">
+    <view class="tab-bar-wrap flex-left">
+      <view data-key="0" bindtap="changeTab" class="unit {{tabIndex == 0?'active': ''}}">只看主播</view>
+      <view data-key="1" bindtap="changeTab" class="unit  {{tabIndex == 1?'active': ''}}">全部聊天</view>
+    </view>
+    <!-- 只看主播 -->
+    <view class="chat-list anchor" hidden="{{tabIndex == 1 ? 'hidden':''}}">
+      <scroll-view scroll-y="true" class="chat-scroll" scroll-into-view="{{scrollToView.anchor}}" scroll-top="100">
+        <view id="item-{{index}}" class="msg-item flex-left anchor" wx:for="{{podTalks}}" wx:for-item="item" wx:key="*item">
+          <view class="unit-0 center">
+            <image class="avatar" src="{{item.userLogoUrl}}"></image>
+            <view class="rank color-red">播主</view>
+          </view>
+          <view class="info-wrap unit-0">
+            <view class="top flex-left color-gray">
+              <view class="name unit">{{item.userName}}</view>
+              <view class="time unit">{{item.sendTime}}</view>
+            </view>
+            <view class="content" wx:for="{{item.display}}" wx:for-item="cts" wx:key="index">
+              <image class="image" mode="aspectFill" wx:if="{{cts.type == 'image'}}" src="{{cts.content}}"></image>
+              <image class="emoji" wx:elif="{{cts.type == 'emoji'}}" src="{{cts.content}}"></image>
+              <text wx:else class="reply-txt">{{cts.content}}</text>
+            </view>
+            <view class="reference" wx:if="{{item.sourceUserName}}">@{{item.sourceUserName}}:{{item.sourceContent}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <!-- 全部聊天 -->
+    <view hidden="{{tabIndex == 0?'hidden':''}}" class="chat-list">
+      <scroll-view  scroll-y="true" class="chat-scroll" scroll-into-view="{{scrollToView.chat}}">
+        <block wx:for="{{podAllTalks}}" wx:for-item="item" wx:key="*item">
+          <!-- 主播 -->
+          <view id="item-{{index}}" class="msg-item flex-left anchor" wx:if="{{item.userName==podCast.userName}}">
+            <view class="unit-0 center">
+              <image class="avatar" src="{{item.userLogoUrl}}"></image>
+              <view class="rank color-red">主播</view>
+            </view>
+            <view class="info-wrap unit-0">
+              <view class="top flex-left color-gray">
+                <view class="name unit">{{item.userName}}</view>
+                <view class="time unit">{{item.sendTime}}</view>
+              </view>
+              <view class="content" wx:for="{{item.display}}" wx:for-item="cts" wx:key="index">
+                <image class="image" mode="aspectFill" wx:if="{{cts.type == 'image'}}" src="{{cts.content}}"></image>
+                <image class="emoji" wx:elif="{{cts.type == 'emoji'}}" src="{{cts.content}}"></image>
+                <text wx:else class="reply-txt">{{cts.content}}</text>
+              </view>
+              <view class="reference" wx:if="{{item.sourceUserName}}">@{{item.sourceUserName}}:{{item.sourceContent}}</view>
+            </view>
+          </view>
+          <!-- 右边发言者 -->
+          <view id="item-{{index}}" class="msg-item flex-left sender" wx:elif="{{item.userName==selfName}}">
+            <view class="unit-0 center">
+              <image class="avatar" src="{{item.userLogoUrl}}"></image>
+              <view class="rank color-red"></view>
+            </view>
+            <view class="info-wrap unit-0">
+              <view class="top flex-left color-gray">
+                <view class="name unit">{{item.userName}}</view>
+                <view class="time unit">{{item.sendTime}}</view>
+              </view>
+              <view class="content">
+                <block wx:for="{{item.display}}" wx:for-item="cts" wx:key="index">
+                  <view class="image-text">
+                    <image class="image" mode="aspectFill" wx:if="{{cts.type == 'image'}}" src="{{cts.content}}"></image>
+                    <image class="emoji" wx:elif="{{cts.type == 'emoji'}}" src="{{cts.content}}"></image>
+                    <text wx:else class="reply-txt">{{cts.content}}</text>
+                  </view>
+                </block>
+              </view>
+              <view class="reference">@飞鱼&nbsp;按说；了看法啊；浪费和骄傲；了大飞龙将爱上当雷锋</view>
+            </view>
+          </view>
+          <!-- 左边其他 -->
+          <view id="item-{{index}}" class="msg-item flex-left" wx:else>
+            <view class="unit-0 center">
+              <image class="avatar" src="{{item.userLogoUrl}}"></image>
+              <view class="rank">主播</view>
+            </view>
+            <view class="info-wrap unit-0">
+              <view class="top flex-left color-gray">
+                <view class="name unit">{{item.userName}}</view>
+                <view class="time unit">{{item.sendTime}}</view>
+              </view>
+              <view class="content" wx:for="{{item.display}}" wx:for-item="cts">
+                <image class="image" mode="aspectFill" wx:if="{{cts.type == 'image'}}" src="{{cts.content}}"></image>
+                <image class="emoji" wx:elif="{{cts.type == 'emoji'}}" src="{{cts.content}}"></image>
+                <text wx:else class="reply-txt">{{cts.content}}</text>
+              </view>
+              <view class="reference" wx:if="{{item.sourceUserName}}">@{{item.sourceUserName}}:{{item.sourceContent}}</view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <form bindreset="formReset" class="form">
+    <view hidden="{{tabIndex == 0?'hidden':''}}" class="send-wrap unit-0 flex-left">
+      <view class="input-wrap unit">
+        <input text="text" placeholder="我来说两句..." bindinput="getMessage" class="input-content margin-top15" />
+      </view>
+      <view class="unit-0 btn-send-c">
+        <button class="btn-send active" formType="reset" wx:if="{{btnStatus}}">发送</button>
+        <button class="btn-send" formType="reset" wx:else>发送</button>
+      </view>
+    </view>
+  </form>
+</view>

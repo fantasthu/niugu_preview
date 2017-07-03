@@ -1,0 +1,61 @@
+<view class="containter">
+  <view class="section">
+    <view class="header flexbox flex-row" bindtap="goCourseList">
+      <view class="item">
+        <view class="title">股市课程</view>
+      </view>
+      <view class="item">
+        <view class="op arrow-right">更多课程
+          <image class="arrow-img" src="../../img/arrow_03.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="content living-wrap flexbox">
+      <!--股市课程-->
+      <block wx:for="{{liveData}}" wx:key="item.liveId">
+        <view class="card" data-key="{{item}}" bindtap="goLivingRoom">
+          <view class="avatar">
+            <image class="img" src="{{item.userLogoUrl}}"></image>
+          </view>
+          <view class="info-wrap flexbox flex-column">
+            <view class="title mutli-ellipsis">{{item.liveTitle}}
+            </view>
+            <view class="name color-gray ellipsis">播主：{{item.userName}}</view>
+            <view class="btn">
+              <image class="live_img" src="../../img/icon_live_012.gif" wx:if="{{item.showType != '3'}}"></image><text class="txt">{{item.btnText}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="section">
+    <view class="header hot-header flexbox flex-row">
+      <view class="item">
+        <view class="title">热门资讯</view>
+      </view>
+      <view class="item">
+      </view>
+    </view>
+    <view class="infomation-wrap flex-vertical">
+      <view wx:for="{{infoList}}" wx:key="*item">
+        <view data-id="{{item.id}}" class="item flex-left" bindtap="goInfoDetail">
+          <view class="info unit flexbox flex-vertical">
+            <view class="title mutli-ellipsis">{{item.title}}</view>
+            <view class="desc color-gray">
+              <image src="{{item.userLogoUrl}}" class="avatar"></image>
+              <view class="txt name ellipsis">{{item.userName}}</view>
+              <view class="txt ellipsis" wx:if="{{item.replyNum>0}}">{{item.replyNum}}评论</view>
+              <view class="txt ellipsis" wx:if="{{item.likeNum>0}}">{{item.likeNum}}赞</view>
+            </view>
+          </view>
+          <view class="unit preview-wrap">
+            <image class="preview" src="{{item.imageUrl}}"></image>
+          </view>
+        </view>
+        <view class="line flex-left"></view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{loadingTip}}" class="loading color-gray">加载中</view>
+</view>

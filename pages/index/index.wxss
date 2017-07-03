@@ -1,0 +1,192 @@
+@import '../common/base.wxss';
+@import '../common/flex.wxss';
+.containter {}
+
+.section {}
+
+.section .header {
+  font-size: 27rpx;
+  justify-content: space-between;
+  padding-bottom: 45rpx;
+}
+
+.section .header .op {
+  font-size: 20rpx;
+}
+
+.section .header .arrow-right {
+  position: relative;
+  height: 28rpx;
+  font-size: 24rpx;
+  line-height: 28rpx;
+}
+
+.arrow-img {
+  width: 8rpx;
+  height:14rpx;
+}
+
+.section .header .title {
+  position: relative;
+  padding-left: 16rpx;
+  height: 26rpx;
+  font-size:28rpx;
+  line-height: 28rpx;
+}
+
+.section .header .title:before {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: 4rpx;
+  content: ' ';
+  width: 4rpx;
+  height: 20rpx;
+  background: #ff4c51;
+  border-radius: 2px;
+}
+
+
+/* 股市课程 */
+
+.living-wrap {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.living-wrap .card {
+  width: 330rpx;
+  margin-bottom: 30rpx;
+}
+
+.living-wrap .card .avatar {
+  margin-bottom: -60rpx;
+  text-align: center;
+}
+
+.living-wrap .card .avatar .img {
+  width: 80rpx;
+  height: 80rpx;
+  border: 1rpx solid #e8e8e8;
+  border-radius: 50%;
+}
+
+.living-wrap .card .info-wrap {
+  border: 1rpx solid #e8e8e8;
+  border-radius: 5px;
+}
+
+.living-wrap .info-wrap {
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+
+.living-wrap .info-wrap .title {
+  margin-top: 62rpx;
+  font-size: 32rpx;
+  line-height: 36rpx;
+  font-weight: 600;
+  width: 220rpx;
+  height: 70rpx;
+  overflow: hidden;
+  text-align: center
+}
+.living-wrap .info-wrap .live_img {
+  position: relative;
+  top:2rpx;
+  width: 22rpx;
+  height: 22rpx;
+}
+.living-wrap .info-wrap .name {
+  font-size: 24rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  width: 230rpx;
+  text-align: center;
+}
+
+.living-wrap .info-wrap .btn {
+  width: 220rpx;
+  height: 60rpx;
+  border: 2rpx solid #ff4e56;
+  border-radius: 32rpx;
+  color: #ff4e56;
+  font-size: 23rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.living-wrap .info-wrap .btn .txt {
+  position: relative;
+  padding-left: 9rpx;
+}
+
+/* 热门资讯 */
+
+.hot-header {
+  margin-top: 34rpx;
+}
+.line {
+  width: 100%;
+  height: 1rpx;
+  background-color: #e8e8e8;
+}
+
+.infomation-wrap .item {
+  padding: 30rpx 0;
+  /*border-bottom: 1rpx solid #e8e8e8;*/
+}
+
+.infomation-wrap .item .info {
+  justify-content: center;
+  margin-top:2rpx;
+}
+
+.infomation-wrap .item .info .avatar {
+  position: relative;
+  top: 4rpx;
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+}
+
+.infomation-wrap .item .info .title {
+  width: 400rpx;
+  font-size: 38rpx;
+  line-height: 47rpx;
+}
+
+.infomation-wrap .item .info .desc {
+  font-size: 24rpx;
+  margin-top: 16rpx;
+  line-height: 24rpx;
+}
+
+.infomation-wrap .info .desc .txt {
+  margin: 0 5rpx;
+  vertical-align: 2rpx;
+  display: inline-block;
+}
+
+.infomation-wrap .item .info .name {
+  max-width: 180rpx;
+  margin-left: 8rpx;
+}
+
+.infomation-wrap .item .preview-wrap {
+  text-align: right;
+}
+
+.infomation-wrap .item .preview {
+  width: 226rpx;
+  max-height: 148rpx;
+  vertical-align: middle;
+}
+
+
+/*  */
+
+.loading {
+  padding-top: 16rpx;
+  text-align: center;
+}
